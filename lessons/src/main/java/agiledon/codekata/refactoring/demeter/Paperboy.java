@@ -15,11 +15,6 @@ public class Paperboy {
     private Wallet wallet = new Wallet();
 
     public boolean getPaid(Customer customer, float payment) {
-        final Wallet w = customer.getWallet();
-        if (w.getTotalMoney() < payment) return false;
-
-        w.subtractMoney(payment);
-        this.wallet.addMoney(payment);
-        return true;
+        return customer.getWallet().transfer(payment, this.wallet);
     }
 }

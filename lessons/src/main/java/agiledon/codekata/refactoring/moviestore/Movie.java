@@ -24,4 +24,31 @@ public class Movie {
     public String getTitle() {
         return title;
     }
+
+    public int getPrice(int days){ // each.getDaysRented
+        int thisAmount = 0;
+        switch (this.getPriceCode()) {
+            case Movie.REGULAR:
+                thisAmount += 2;
+                if (days > 2) thisAmount += (days - 2) * 1.5;
+                break;
+            case Movie.NEW_RELEASE:
+                thisAmount += days * 3;
+                break;
+            case Movie.CHILDREN:
+                thisAmount += 1.5;
+                if (days > 3) thisAmount += (days - 3) * 1.5;
+                break;
+        }
+        return thisAmount;
+    }
+
+    public int getPoints(int daysRented){
+        // add bonus for a two day new release rental
+        if ((this.getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1)
+            return 2;
+        return 1;
+    }
+
+
 }

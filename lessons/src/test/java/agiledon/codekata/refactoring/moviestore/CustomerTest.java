@@ -1,10 +1,10 @@
 package agiledon.codekata.refactoring.moviestore;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+
+import org.junit.Before;
+import org.junit.Test;
 
 public class CustomerTest {
     public static final String REGULAR_MOVIE_NAME = "Brave Heart";
@@ -32,7 +32,14 @@ public class CustomerTest {
 
         double expectedTotalAmount = 2.0;
         int expectedFrequentRenterPoints = 1;
-        assertThat(customer.statement(), is(result(CUSOMTER_NAME, REGULAR_MOVIE_NAME, expectedTotalAmount, expectedFrequentRenterPoints)));
+        assertThat(
+                customer.statement(),
+                is(
+                        result(
+                                CUSOMTER_NAME,
+                                REGULAR_MOVIE_NAME,
+                                expectedTotalAmount,
+                                expectedFrequentRenterPoints)));
     }
 
     @Test
@@ -42,7 +49,14 @@ public class CustomerTest {
 
         double expectedTotalAmount = 3.5;
         int expectedFrequentRenterPoints = 1;
-        assertThat(customer.statement(), is(result(CUSOMTER_NAME, REGULAR_MOVIE_NAME, expectedTotalAmount, expectedFrequentRenterPoints)));
+        assertThat(
+                customer.statement(),
+                is(
+                        result(
+                                CUSOMTER_NAME,
+                                REGULAR_MOVIE_NAME,
+                                expectedTotalAmount,
+                                expectedFrequentRenterPoints)));
     }
 
     @Test
@@ -52,7 +66,14 @@ public class CustomerTest {
 
         double expectedTotalAmount = 3.0;
         int expectedFrequentRenterPoints = 1;
-        assertThat(customer.statement(), is(result(CUSOMTER_NAME, NEW_RELEASE_MOVIE_NAME, expectedTotalAmount, expectedFrequentRenterPoints)));
+        assertThat(
+                customer.statement(),
+                is(
+                        result(
+                                CUSOMTER_NAME,
+                                NEW_RELEASE_MOVIE_NAME,
+                                expectedTotalAmount,
+                                expectedFrequentRenterPoints)));
     }
 
     @Test
@@ -62,7 +83,14 @@ public class CustomerTest {
 
         double expectedTotalAmount = 9.0;
         int expectedFrequentRenterPoints = 2;
-        assertThat(customer.statement(), is(result(CUSOMTER_NAME, NEW_RELEASE_MOVIE_NAME, expectedTotalAmount, expectedFrequentRenterPoints)));
+        assertThat(
+                customer.statement(),
+                is(
+                        result(
+                                CUSOMTER_NAME,
+                                NEW_RELEASE_MOVIE_NAME,
+                                expectedTotalAmount,
+                                expectedFrequentRenterPoints)));
     }
 
     @Test
@@ -72,7 +100,14 @@ public class CustomerTest {
 
         double expectedTotalAmount = 1.5;
         int expectedFrequentRenterPoints = 1;
-        assertThat(customer.statement(), is(result(CUSOMTER_NAME, CHILDREN_MOVIE, expectedTotalAmount, expectedFrequentRenterPoints)));
+        assertThat(
+                customer.statement(),
+                is(
+                        result(
+                                CUSOMTER_NAME,
+                                CHILDREN_MOVIE,
+                                expectedTotalAmount,
+                                expectedFrequentRenterPoints)));
     }
 
     @Test
@@ -82,7 +117,14 @@ public class CustomerTest {
 
         double expectedTotalAmount = 3.0;
         int expectedFrequentRenterPoints = 1;
-        assertThat(customer.statement(), is(result(CUSOMTER_NAME, CHILDREN_MOVIE, expectedTotalAmount, expectedFrequentRenterPoints)));
+        assertThat(
+                customer.statement(),
+                is(
+                        result(
+                                CUSOMTER_NAME,
+                                CHILDREN_MOVIE,
+                                expectedTotalAmount,
+                                expectedFrequentRenterPoints)));
     }
 
     @Test
@@ -94,18 +136,23 @@ public class CustomerTest {
         customer.addRental(rentalForNewReleaseMovie);
         customer.addRental(rentalForChildrenMovie);
 
-        assertThat(customer.statement(), is("Rental Record for zhangyi\n\t" +
-                "Brave Heart\t3.5\n" +
-                "\tIron Man\t9.0\n" +
-                "\tKongfu Panda\t1.5\n" +
-                "Amount owed is 14.0\n" +
-                "You earned 4 frequent renter points"));
-
+        assertThat(
+                customer.statement(),
+                is(
+                        "Rental Record for zhangyi\n\t"
+                                + "Brave Heart\t3.5\n"
+                                + "\tIron Man\t9.0\n"
+                                + "\tKongfu Panda\t1.5\n"
+                                + "Amount owed is 14.0\n"
+                                + "You earned 4 frequent renter points"));
     }
 
-    private String result(String customerName, String movieName, double totalAmout, int frequentRenterPoints) {
-        return String.format("Rental Record for %s\n\t" +
-                "%s\t%s\nAmount owed is %s\n" +
-                "You earned %d frequent renter points", customerName, movieName, totalAmout, totalAmout, frequentRenterPoints);
+    private String result(
+            String customerName, String movieName, double totalAmout, int frequentRenterPoints) {
+        return String.format(
+                "Rental Record for %s\n\t"
+                        + "%s\t%s\nAmount owed is %s\n"
+                        + "You earned %d frequent renter points",
+                customerName, movieName, totalAmout, totalAmout, frequentRenterPoints);
     }
 }

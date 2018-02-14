@@ -9,26 +9,33 @@ public class Robot {
 
     public Robot() {}
 
-    public Machine location() {return location;}
-    public void moveTo(Machine location) {this.location = location;}
+    public Machine location() {
+        return location;
+    }
 
-    public void pick() {this.bin = location.take();}
-    public String bin() {return bin;}
+    public void moveTo(Machine location) {
+        this.location = location;
+    }
+
+    public void pick() {
+        this.bin = location.take();
+    }
+
+    public String bin() {
+        return bin;
+    }
 
     public void release() {
         location.put(bin);
         bin = null;
     }
-    
-    public void print(Writer out) throws IOException{
-		out.write("Robot");
-        if (location != null)
-            out.write(" location=" + location.name());
 
-        if (bin != null)
-            out.write(" bin=" + bin);
+    public void print(Writer out) throws IOException {
+        out.write("Robot");
+        if (location != null) out.write(" location=" + location.name());
+
+        if (bin != null) out.write(" bin=" + bin);
 
         out.write("\n");
     }
 }
-

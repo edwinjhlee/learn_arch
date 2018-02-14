@@ -27,13 +27,14 @@ public class Machine {
         this.bin = bin;
     }
 
-    public String name() {return name;}
-    
-    public void print(Writer out) throws IOException{
+    public String name() {
+        return name;
+    }
+
+    public void print(Writer out) throws IOException {
         out.write("Machine " + name);
 
-        if (bin != null)
-            out.write(" bin=" + bin);
+        if (bin != null) out.write(" bin=" + bin);
 
         out.write("\n");
     }

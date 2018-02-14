@@ -74,6 +74,8 @@ dependencies {
 	compile 'net.sourceforge.streamsupport:streamsupport-cfuture:1.5.5'
 	
 	compile 'com.aliyun.oss:aliyun-sdk-oss:2.7.0'
+
+    compile 'com.google.guava:guava:15.0'
 	
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'

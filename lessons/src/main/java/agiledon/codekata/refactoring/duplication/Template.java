@@ -15,8 +15,8 @@ public class Template {
             int templateSplitBegin = template.indexOf("%CODE%");
             int templateSplitEnd = templateSplitBegin + 6;
             String templatePartOne = new String(template.substring(0, templateSplitBegin));
-            String templatePartTwo = new String(template.substring(templateSplitEnd,
-                    template.length()));
+            String templatePartTwo =
+                    new String(template.substring(templateSplitEnd, template.length()));
             code = new String(reqId);
             template = new String(templatePartOne + code + templatePartTwo);
 
@@ -32,4 +32,3 @@ public class Template {
         }
     }
 }
-

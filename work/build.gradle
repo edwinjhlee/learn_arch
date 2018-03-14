@@ -58,7 +58,7 @@ repositories {
      // maven { url "https://plugins.gradle.org/m2/" }
 }
 
-mainClassName = 'pso.Test'
+mainClassName = 'pso.Main'
 
 defaultTasks 'goJF', 'build', 'test'
 

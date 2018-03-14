@@ -151,7 +151,7 @@ class ParticalManager {
         int lastBestRun = 0;
         int i=0;
         for (; i < run; ++i) {
-            if (i - lastBestRun > 30) {
+            if (i - lastBestRun > 50) {
                 break;
             }
 
@@ -163,6 +163,7 @@ class ParticalManager {
         }
 
         System.out.println(this.bestValue + " " + i + "\n" + this.best.toStr());
+        System.out.println();
 
     }
 
@@ -172,9 +173,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ParticalManager pm = new ParticalManager(50);
+        for (int i=0; i<10; ++i) {
 
-        pm.work(10000);
+            ParticalManager pm = new ParticalManager(50);
+
+            pm.work(10000);
+        }
 
     }
 }

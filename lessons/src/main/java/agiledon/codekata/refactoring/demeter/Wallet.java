@@ -19,13 +19,11 @@ public class Wallet {
         value -= debit;
     }
 
-    public boolean transfer(float payment, Wallet targetWallet){
+    public boolean transfer(float payment, Wallet targetWallet) {
         if (this.getTotalMoney() < payment) return false;
 
         this.subtractMoney(payment);
         targetWallet.addMoney(payment);
         return true;
     }
-
-
 }

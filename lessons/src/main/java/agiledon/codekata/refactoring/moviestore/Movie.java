@@ -25,7 +25,7 @@ public class Movie {
         return title;
     }
 
-    public int getPrice(int days){ // each.getDaysRented
+    public int getPrice(int days) { // each.getDaysRented
         int thisAmount = 0;
         switch (this.getPriceCode()) {
             case Movie.REGULAR:
@@ -43,12 +43,9 @@ public class Movie {
         return thisAmount;
     }
 
-    public int getPoints(int daysRented){
+    public int getPoints(int daysRented) {
         // add bonus for a two day new release rental
-        if ((this.getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1)
-            return 2;
+        if ((this.getPriceCode() == Movie.NEW_RELEASE) && daysRented > 1) return 2;
         return 1;
     }
-
-
 }

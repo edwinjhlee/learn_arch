@@ -13,8 +13,8 @@ class Solution {
         this.init();
     }
 
-    public void init(){
-        for (int i=0; i<4; ++i) {
+    public void init() {
+        for (int i = 0; i < 4; ++i) {
             this.positions[i] = Math.random() * 400;
         }
         this.constraint();
@@ -110,7 +110,6 @@ class Partical {
         this.solution.constraint();
         return v;
     }
-
 }
 
 class ParticalManager {
@@ -144,12 +143,11 @@ class ParticalManager {
         }
     }
 
-
-    public void work(int run){
+    public void work(int run) {
 
         double lastBest = 0;
         int lastBestRun = 0;
-        int i=0;
+        int i = 0;
         for (; i < run; ++i) {
             if (i - lastBestRun > 50) {
                 break;
@@ -164,21 +162,18 @@ class ParticalManager {
 
         System.out.println(this.bestValue + " " + i + "\n" + this.best.toStr());
         System.out.println();
-
     }
-
 }
 
 public class Main {
 
     public static void main(String[] args) {
 
-        for (int i=0; i<10; ++i) {
+        for (int i = 0; i < 10; ++i) {
 
             ParticalManager pm = new ParticalManager(50);
 
             pm.work(10000);
         }
-
     }
 }
